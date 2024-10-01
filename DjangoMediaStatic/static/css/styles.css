@@ -126,3 +126,10 @@ h1, h2, h3 {
 p {
     color: #6c757d;
 }
+
+.custom-carousel-image {
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 0 auto;
+}
