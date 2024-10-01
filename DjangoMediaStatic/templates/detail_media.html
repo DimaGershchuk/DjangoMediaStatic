@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    
+    <div>
+        <p><strong>File:</strong> <a href="{{ object.file.url }}" download>Download</a></p>
+        <p><strong>Image:</strong></p>
+        <img src="{{ object.image.url }}" alt="{{ object.title }}" style="max-width: 400px;">
+    </div>
+
+
+
+    <a href="{% url 'home' %}">Back to list</a>
+{% endblock %}

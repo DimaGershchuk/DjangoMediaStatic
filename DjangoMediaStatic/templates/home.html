@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Available Media</h1>
+    <ul>
+        {% for media in object_list %}
+            <li>
+                <a href="{% url 'detail_media' media.pk %}">{{ media.title }}</a>
+            </li>
+        {% empty %}
+            <p>No media available.</p>
+        {% endfor %}
+    </ul>
+
+
+    <div id="mediaCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    {% for media in object_list %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img src="{{ media.image.url }}" class="d-block w-100" alt="{{ media.title }}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><a href="{% url 'detail_media' media.pk %}" class="text-light">{{ media.title }}</a></h5>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+{% endblock %}
