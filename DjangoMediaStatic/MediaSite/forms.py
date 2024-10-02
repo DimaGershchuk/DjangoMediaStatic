@@ -1,5 +1,5 @@
 from .models import MyMedia
-from django.contrib.auth.forms import forms
+from django import forms
 
 
 class MediaForm(forms.ModelForm):
