@@ -3,7 +3,7 @@
 {% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ object.title }}</h1>
+    <h1>{{ object.title|escape }}</h1>
     
     <div>
         <p><strong>File:</strong> <a href="{{ object.file.url }}" download="">Download</a></p>

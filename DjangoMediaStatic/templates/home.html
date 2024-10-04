@@ -22,7 +22,7 @@
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
         <img src="{{ media.image.url }}" class="d-block custom-carousel-image" alt="{{ media.title }}" width="700" height="500">
         <div class="carousel-caption d-none d-md-block">
-          <h5><a href="{% url 'detail_media' media.pk %}" class="text-light">{{ media.title }}</a></h5>
+          <h5><a href="{% url 'detail_media' media.pk %}" class="text-light">{{ media.title|escape }}</a></h5>
         </div>
       </div>
     {% endfor %}
